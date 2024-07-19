@@ -1,0 +1,17 @@
+git init: 在当前目录中初始化一个新的 Git 仓库。
+git clone <repository>: 克隆（下载）一个远程仓库到本地。
+git add <file>: 将文件添加到暂存区，准备提交。
+git commit -m <message>: 提交暂存区中的文件，并添加提交消息。
+git status: 显示工作区和暂存区的状态。
+git log: 显示提交历史记录。
+git pull: 从远程仓库拉取最新的更改。
+git push: 将本地的提交推送到远程仓库。
+git branch: 列出所有分支，显示当前分支。
+git checkout <branch>: 切换到指定分支。
+git merge <branch>: 将指定分支的更改合并到当前分支。
+git remote: 显示远程仓库的信息。
+git diff: 显示未暂存的文件与最后一次提交之间的差异。
+git stash: 暂存当前工作目录中的更改，以便稍后恢复。
+git reset <file>: 取消对文件的暂存，将其从暂存区移出。
+git rm <file>: 从 Git 中删除文件并将其从工作目录中删除。
+git branch --set-upstream-to=<remote>/<branch>: Git设置上游分支
