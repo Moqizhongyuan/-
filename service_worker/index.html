@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>service-worker</title>
+  </head>
+  <body>
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("./service-worker.js")
+          .then(function (registration) {
+            console.log("Service Worker 注册成功: ", registration);
+          })
+          .catch(function (error) {
+            console.log("Service Worker 注册失败: ", error);
+          });
+      }
+
+      // 使用 fetch 请求 CDN 资源
+      fetch("https://code.jquery.com/jquery-3.6.0.min.js")
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return response.text();
+        })
+        .then((data) => {
+          console.log("CDN 资源加载成功：", data);
+          // 这里可以处理加载的 JavaScript 代码
+          const script = document.createElement("script");
+          script.textContent = data;
+          document.body.appendChild(script);
+        })
+        .catch((error) => {
+          console.error("请求失败：", error);
+        });
+    </script>
+  </body>
+</html>
